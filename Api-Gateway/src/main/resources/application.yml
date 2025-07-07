@@ -5,15 +5,15 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: sensor-data-collector
+        - id: SensorDataColletion
           uri: lb://SENSOR-DATA-COLLECTOR
           predicates:
             - Path=/api/conjunta/2p/sensor-readings/**
-        - id: environmental-analyzer
+        - id: EnvironmentalAnalyzer
           uri: lb://ENVIRONMENTAL-ANALYZER
           predicates:
             - Path=/api/conjunta/2p/alerts/**
-        - id: notification-dispatcher
+        - id: NotificationDispatcher
           uri: lb://NOTIFICATION-DISPATCHER
           predicates:
             - Path=/api/conjunta/2p/notifications/**
