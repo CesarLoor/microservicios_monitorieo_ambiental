@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: sensor-collector
   datasource:
     url: jdbc:postgresql://localhost:26257/sensor_db?sslmode=disable
     username: root
@@ -8,11 +10,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   rabbitmq:
     host: localhost
     port: 5672
-    username: admin
-    password: admin
+    username: guest
+    password: guest
 
 eureka:
   client:

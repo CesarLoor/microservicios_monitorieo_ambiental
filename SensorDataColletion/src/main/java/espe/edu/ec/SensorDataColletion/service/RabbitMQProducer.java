@@ -13,6 +13,8 @@ public class RabbitMQProducer {
     private RabbitTemplate rabbitTemplate;
 
     public void sendNewSensorReadingEvent(SensorReading sensorReading) {
+        System.out.println("[RabbitMQProducer] Enviando mensaje a RabbitMQ: " + sensorReading);
         rabbitTemplate.convertAndSend("sensor-events", "new.reading", sensorReading);
+        System.out.println("[RabbitMQProducer] Mensaje enviado a exchange 'sensor-events' con routing key 'new.reading'.");
     }
 }

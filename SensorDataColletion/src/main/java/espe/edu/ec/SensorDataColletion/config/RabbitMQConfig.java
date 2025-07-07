@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMQConfig {
+    
 
     // Nombre del exchange
     public static final String SENSOR_EVENTS_EXCHANGE = "sensor-events";
@@ -22,7 +23,9 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue newReadingQueue() {
+        
         return new Queue(NEW_READING_QUEUE, true); // durable = true
+
     }
 
     @Bean

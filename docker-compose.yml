@@ -21,7 +21,7 @@ services:
     command: start-single-node --insecure
     ports:
       - "26257:26257" # Puerto SQL
-      - "8081:8081"   # Puerto de administración
+      - "8080:8080"   # Puerto de administración
     volumes:
       - cockroach-data:/cockroach/cockroach-data
     networks:

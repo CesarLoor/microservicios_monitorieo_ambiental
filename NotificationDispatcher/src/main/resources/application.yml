@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: notification-dispatcher
   datasource:
     url: jdbc:postgresql://localhost:26257/sensor_db?sslmode=disable
     username: root
@@ -20,4 +22,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 server:
-  port: 8083
+  port: 8084
