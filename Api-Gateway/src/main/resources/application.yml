@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: sensor-data-collector
+          uri: lb://SENSOR-DATA-COLLECTOR
+          predicates:
+            - Path=/api/conjunta/2p/sensor-readings/**
+        - id: environmental-analyzer
+          uri: lb://ENVIRONMENTAL-ANALYZER
+          predicates:
+            - Path=/api/conjunta/2p/alerts/**
+        - id: notification-dispatcher
+          uri: lb://NOTIFICATION-DISPATCHER
+          predicates:
+            - Path=/api/conjunta/2p/notifications/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
