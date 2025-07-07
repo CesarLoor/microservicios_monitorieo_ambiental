@@ -1,4 +1,9 @@
+server:
+  port: 8003
+
 spring:
+  application:
+    name: enviromental-analyzer
   datasource:
     url: jdbc:postgresql://localhost:26258/alerts?sslmode=disable
     username: root

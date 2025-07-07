@@ -1,4 +1,9 @@
+server:
+  port: 8002
+
 spring:
+  application:
+    name: notification-service
   datasource:
     url: jdbc:postgresql://localhost:26259/notifications?sslmode=disable
     username: root
