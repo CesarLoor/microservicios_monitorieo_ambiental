@@ -1,10 +1,10 @@
-package espe.edu.ec.Ereka_Server;
+package espe.edu.ec.eureka_server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ErekaServerApplicationTests {
+class EurekaServerApplicationTests {
 
 	@Test
 	void contextLoads() {
