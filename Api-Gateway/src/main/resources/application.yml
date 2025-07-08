@@ -2,9 +2,21 @@ server:
   port: 8081
 
 spring:
+  main:
+    web-application-type: reactive
+  webflux:
+    base-path: /
+  application:
+    name: api-gateway
   cloud:
     gateway:
       routes:
+        - id: RootRedirect
+          uri: http://localhost:8081
+          predicates:
+            - Path=/
+          filters:
+            - RedirectTo=302, /api/conjunta/2p/sensor-readings
         - id: SensorDataColletion
           uri: lb://SENSOR-DATA-COLLECTOR
           predicates:
@@ -22,3 +34,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
